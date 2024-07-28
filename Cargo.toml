@@ -1,0 +1,31 @@
+[package]
+name = "eval_code_ai"
+version = "0.1.0"
+edition = "2021"
+default-run = "eval_code_ai"
+
+[lints.rust]
+unsafe_code = "forbid"
+unused = { level = "allow", priority = -1 }
+
+[[bin]]
+name = "ollama"
+path = "src/unit/ollama/main.rs"
+
+[[bin]]
+name = "chat_ollama"
+path = "src/unit/chat/main.rs"
+
+[dependencies]
+actix = "0.13.5"
+actix-web = "4.7.0"
+actix-web-actors = "4.3.0"
+derive_more = { version = "0.99.18", features = ["from"] }
+env_logger = "0.11.3"
+futures = "0.3.30"
+log = "0.4.22"
+ollama-rs = { version = "0.1", features = ["stream"] }
+serde = "1.0.204"
+simple-fs = { version = "0.1.3", features = ["full"] }
+tokio = { version = "1.38.0", features = ["full"] }
+tokio-stream = "0.1.15"
